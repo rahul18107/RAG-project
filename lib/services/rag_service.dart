@@ -8,10 +8,7 @@ import 'package:flutter/foundation.dart';
 class RagService {
   static final _supabase = Supabase.instance.client;
 
-  static final _gemini = GenerativeModel(
-    model: AppConstants.chatModel,
-    apiKey: AppConstants.geminiKey,
-  );
+  
 
 
 

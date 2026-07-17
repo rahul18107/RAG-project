@@ -11,6 +11,7 @@ import 'screens/login_screen.dart';
 import 'services/auth_service.dart';
 import 'package:provider/provider.dart';
 import 'providers/document_provider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 
   
@@ -81,7 +82,14 @@ class _MainShellState extends State<MainShell> {
   }
 }
 void main() async {
+  print("main started");
   WidgetsFlutterBinding.ensureInitialized();
+   
+
+     
+    await dotenv.load(fileName: ".env");
+    print("Loaded: ${dotenv.env}");
+  
 
   await Supabase.initialize(
     url: AppConstants.supabaseUrl,
